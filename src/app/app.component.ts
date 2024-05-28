@@ -1,5 +1,5 @@
 import { Component, Inject, Optional } from '@angular/core';
-import { Context } from '@netlify/functions';
+import { Context } from '@netlify/edge-functions';
 
 @Component({
     selector  : 'app-root',
