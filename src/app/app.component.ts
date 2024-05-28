@@ -17,8 +17,8 @@ export class AppComponent {
         @Inject('netlify.context') @Optional() context?: Context
     )
     {
-        console.log(request?.url);
-        console.log(context);
+        console.log('Request:', request?.url);
+        console.log('Context:', context?.geo.city);
     }
 
 }
