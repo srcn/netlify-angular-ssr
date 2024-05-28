@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject, Optional } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { Context } from '@netlify/functions';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,14 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'netlify-ssr-functions-test';
+
+    constructor(
+        @Inject('netlify.request') @Optional() request?: Request,
+        @Inject('netlify.context') @Optional() context?: Context
+    )
+    {
+        console.log(request?.url);
+        console.log(context);
+    }
+
 }
